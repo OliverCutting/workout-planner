@@ -22,17 +22,6 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor:  Colors.grey[900],
       ),
-      body: Center(
-          child: Text(
-            'Welcome to Workout Planner',
-            style:  TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 2.0,
-                color:  Colors.grey[900],
-                fontFamily: 'Oswald'
-            ),
-          )),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
         backgroundColor: Colors.blue[600],
