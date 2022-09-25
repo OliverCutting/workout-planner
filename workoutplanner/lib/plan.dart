@@ -1,0 +1,3 @@
+class Plan {
+  final exercises = [];
+}

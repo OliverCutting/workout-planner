@@ -1,31 +1,66 @@
 import 'package:flutter/material.dart';
+import 'workout.dart';
+import 'plan.dart';
 
-void main() => runApp(MaterialApp(
-  home: Home()
-));
+void main() => runApp(MaterialApp(home: Home()));
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Workout Planner',
-          style:  TextStyle(
+          style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
               letterSpacing: 2.0,
-              fontFamily: 'Oswald'
-          ),
+              fontFamily: 'Oswald'),
         ),
         centerTitle: true,
-        backgroundColor:  Colors.grey[900],
+        backgroundColor: Colors.grey[900],
+      ),
+      body: Container(
+        color: Colors.grey[900],
+        child: ListView(
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.grey[900],
+                minimumSize: const Size.fromHeight(100),
+              ),
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    heightFactor: 2,
+                    child: Text(Workout.name),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(Workout.exercises[0]),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(Workout.exercises[1]),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(Workout.exercises[2]),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
         backgroundColor: Colors.blue[600],
-        child:  const Text('+'),
+        child: const Text('+'),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -38,11 +73,16 @@ class Home extends StatelessWidget {
             label: 'History',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.accessibility),
+            label: 'My Workouts',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
           ),
         ],
-          selectedItemColor: Colors.blue[600],
+        selectedItemColor: Colors.blue[600],
+        unselectedItemColor: Colors.grey[900],
       ),
     );
   }
