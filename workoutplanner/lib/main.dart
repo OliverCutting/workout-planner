@@ -10,6 +10,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
         title: const Text(
           'Workout Planner',
@@ -20,25 +21,25 @@ class Home extends StatelessWidget {
               fontFamily: 'Oswald'),
         ),
         centerTitle: true,
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Colors.grey[850],
       ),
-      body: Container(
-        color: Colors.grey[900],
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: ListView(
           children: [
             ElevatedButton(
               onPressed: () {},
               style: TextButton.styleFrom(
-                backgroundColor: Colors.grey[900],
+                backgroundColor: Colors.grey[850],
                 minimumSize: const Size.fromHeight(100),
               ),
               child: Column(
                 children: [
                   Align(
                     alignment: Alignment.center,
-                    heightFactor: 2,
                     child: Text(Workout.name),
                   ),
+                  const Divider(color: Colors.white,),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(Workout.exercises[0]),

@@ -1,3 +1,3 @@
 class Plan {
-  final exercises = [];
+  final workouts = [];
 }
