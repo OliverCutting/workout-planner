@@ -12,6 +12,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  List<String> exercises = Workout.exercises;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +32,7 @@ class _HomeState extends State<Home> {
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-        child: ListView(
+        child: Column(
           children: [
             ElevatedButton(
               onPressed: () {},
@@ -39,25 +41,7 @@ class _HomeState extends State<Home> {
                 minimumSize: const Size.fromHeight(100),
               ),
               child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(Workout.name),
-                  ),
-                  const Divider(color: Colors.white,),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(Workout.exercises[0]),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(Workout.exercises[1]),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(Workout.exercises[2]),
-                  ),
-                ],
+                children: exercises.map((exercise) => Text(exercise)).toList(),
               ),
             ),
           ],
@@ -88,3 +72,24 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+
+// [
+// Align(
+// alignment: Alignment.center,
+// child: Text(Workout.name),
+// ),
+// const Divider(color: Colors.white,),
+// Align(
+// alignment: Alignment.centerLeft,
+// child: Text(Workout.exercises[0]),
+// ),
+// Align(
+// alignment: Alignment.centerLeft,
+// child: Text(Workout.exercises[1]),
+// ),
+// Align(
+// alignment: Alignment.centerLeft,
+// child: Text(Workout.exercises[2]),
+// ),
+// ],
