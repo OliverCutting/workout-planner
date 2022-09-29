@@ -4,8 +4,13 @@ import 'plan.dart';
 
 void main() => runApp(MaterialApp(home: Home()));
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +62,6 @@ class Home extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: null,
-        backgroundColor: Colors.blue[600],
-        child: const Text('+'),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
