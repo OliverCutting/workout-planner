@@ -1,4 +1,6 @@
 class Workout {
-  static String name  = 'Workout A';
-  static final exercises = ['Bench Press', 'Barbell Row', 'Squat'];
+  String name;
+  List exercises;
+
+  Workout(String this.name, List this.exercises);
 }
